@@ -41,6 +41,6 @@ echo "Installing required Node.js modules..."
 npm install || { echo "Error: npm installation failed."; exit 1; }
 
 # End Message
-echo "Installation complete! Navigate to '$INSTALL_DIR' and follow the instructions in the README.md file."
+echo "Installation complete! Navigate to the installation folder and follow the instructions in the README.md file."
 echo "Credits: FlipArtYT, CommandCrafterx"
 echo "Thank you for using the installer!"
