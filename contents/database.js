@@ -26,3 +26,5 @@ if (rowCount === 0) {
 }
 
 module.exports = db;
+
+console.log("Done")
