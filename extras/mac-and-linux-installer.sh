@@ -3,7 +3,7 @@
 # Function to check if a command exists
 check_command() {
     if ! command -v "$1" &> /dev/null; then
-        echo "Error: $1 is not installed. Please install it and try again."
+        echo "Error: '$1' is not installed. Please install it and try again."
         exit 1
     fi
 }
@@ -15,32 +15,53 @@ check_command git
 
 # Clear screen and print welcome message
 clear
-echo "Welcome to the Express SQLITE3 Template Installer."
-echo "This script will install the Express SQLITE3 Template to your current directory."
-echo "Ensure that you have npm, Node.js, and Git installed before running this script."
-echo "Warning: This script will install Node.js modules!"
+echo "=========================================="
+echo " Express SQLITE3 Template Installer"
+echo "=========================================="
+echo "This script will install the Express SQLITE3 Template in your current directory."
+echo "Ensure that you have npm, Node.js, and Git installed before proceeding."
+echo "Warning: This script will install Node.js modules in your current folder!"
 echo
 
 # Confirm before proceeding
 while true; do
-    read -rp "Do you want to proceed with the installation? (y/n) " yn
+    read -rp "Do you want to proceed with the installation? (y/n): " yn
     case "$yn" in
-        [yY]) echo "Proceeding..."; break ;;
+        [yY]) echo "Proceeding with installation..."; break ;;
         [nN]) echo "Installation cancelled."; exit 0 ;;
         *) echo "Invalid input. Please enter 'y' or 'n'." ;;
     esac
 done
 
-# Cloning the repository
+# Repository details
 REPO_URL="https://github.com/FlipArtYT/express-sqlite3-template.git"
+TARGET_DIR="express-sqlite3-template"
+
+# Clone the repository
 echo "Cloning the repository..."
-git clone "$REPO_URL" || { echo "Error: Failed to clone repository."; exit 1; }
+if git clone "$REPO_URL" "$TARGET_DIR"; then
+    echo "Repository successfully cloned."
+else
+    echo "Error: Failed to clone repository."
+    exit 1
+fi
 
-# Installing required Node.js modules
+# Navigate into the project directory
+cd "$TARGET_DIR" || { echo "Error: Failed to enter project directory."; exit 1; }
+
+# Install required Node.js modules
 echo "Installing required Node.js modules..."
-npm install || { echo "Error: npm installation failed."; exit 1; }
+if npm install; then
+    echo "Dependencies installed successfully."
+else
+    echo "Error: npm installation failed."
+    exit 1
+fi
 
-# End Message
-echo "Installation complete! Navigate to the installation folder and follow the instructions in the README.md file."
+# End message
+echo "=========================================="
+echo "Installation complete!"
+echo "Navigate to '$TARGET_DIR' and follow the instructions in README.md."
 echo "Credits: FlipArtYT, CommandCrafterx"
-echo "Thank you for using the installer!"
+echo "Thank you for using this installer!"
+echo "=========================================="
