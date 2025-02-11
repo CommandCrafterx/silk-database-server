@@ -20,7 +20,7 @@ echo " Express SQLITE3 Template Installer"
 echo "=========================================="
 echo "This script will install the Express SQLITE3 Template in your current directory."
 echo "Ensure that you have npm, Node.js, and Git installed before proceeding."
-echo "Warning: This script will install Node.js modules in your current folder!"
+echo "Warning: This script will install Node.js modules!"
 echo
 
 # Confirm before proceeding
