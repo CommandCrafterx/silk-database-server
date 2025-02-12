@@ -44,5 +44,19 @@ Sample data includes users like:
 - May Fest (24)
 - Jackson Pot (19)
 
+# Adding Data
+Use the "fetch" syntax with the POST request method to add data to the database.
+Example:
+
+fetch("http:/localhost:3000/users/", {
+    method: "POST",
+    body: JSON.stringify({
+        name: "Bigger, GG",
+        age: 25}),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+
 # Contributing
 Feel free to submit pull requests or open issues to suggest improvements.
