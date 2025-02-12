@@ -51,7 +51,7 @@ cd "$TARGET_DIR" || { echo "Error: Failed to enter project directory."; exit 1; 
 
 # Install required Node.js modules
 echo "Installing required Node.js modules..."
-if npm install; then
+if npm install express better-sqlite3; then
     echo "Dependencies installed successfully."
 else
     echo "Error: npm installation failed."
