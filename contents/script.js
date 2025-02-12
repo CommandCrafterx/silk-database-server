@@ -6,6 +6,8 @@ const app = express(); // Create an Express Application
 const port = 3000; // Set the server port
 const db = require("./database.js"); // Import the database file
 
+app.use(express.json())
+
 console.log("Starting Server..."); // Log message when server is starting
 
 // Home route
@@ -36,6 +38,23 @@ app.get("/users/:id", (req, res) => {
     res.status(404).json({ error: "User not found." });
   }
 });
+
+// Route to add data to the database
+app.post("/users/", (req, res) => {
+  const {name, age} = req.body;
+  if (!(name && age)) {
+    return res.status(400).json({error: "Provide name and age to add it to the database."})
+  }
+
+  console.log(`Adding Data to Database: Name = ${name} Age = ${age}`)
+  const result = db.prepare("INSERT INTO chat (name, age) VALUES (?,?)").run(name, age)
+
+  if (result.changes > 0) {
+    res.status(201).json({message: "Successfully added user data!"})
+  } else {
+    res.status(500).json({error: "An unknown server error ocurred."})
+  }
+})
 
 // Error handling for unknown routes
 app.use((req, res) => {
