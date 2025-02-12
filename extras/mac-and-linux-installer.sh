@@ -47,7 +47,7 @@ else
 fi
 
 # Navigate into the project directory
-cd "$TARGET_DIR" || { echo "Error: Failed to enter project directory."; exit 1; }
+cd "$TARGET_DIR/contents" || { echo "Error: Failed to enter project directory."; exit 1; }
 
 # Install required Node.js modules
 echo "Installing required Node.js modules..."
