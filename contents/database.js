@@ -23,8 +23,11 @@ if (rowCount === 0) {
         ('Alan Fresco', 36), 
         ('Jackson Pot', 19)`;
     db.exec(insertDataQuery);
+    console.log("Sample Data was added to the chat table.")
+} else {
+    console.log("Table already contains data. Sample Data was not added. Continuing.")
 }
 
 module.exports = db;
 
-console.log("Done")
+console.log("Success")
