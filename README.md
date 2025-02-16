@@ -10,7 +10,7 @@ This is a very basic setup with a configured database and sample user data so th
 - Clean code with structured error handling and extensible architecture.
 
 # Getting Started
-note: You can also use our Installer from the Releases section if you use mac OS or Linux.
+Note: You can also use our Installer from the Releases section if you use macOS or Linux.
 # Install Dependencies
 Type into your terminal: "npm install express better-sqlite3"
 # Run the Application
