@@ -45,7 +45,7 @@ Sample data includes users like:
 - Jackson Pot (19)
 
 # Adding Data
-Use the "fetch" syntax with the POST request method to add data to the database.
+Use the "fetch" syntax with the POST request method to add data to the database. Make sure you don't forget name and age.
 Example:
 
 fetch("http:/localhost:3000/users/", {
@@ -53,6 +53,19 @@ fetch("http:/localhost:3000/users/", {
     body: JSON.stringify({
         name: "Bigger, GG",
         age: 25}),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+
+# Deleting Data
+Use the "fetch" syntax like above but change the method to DELETE. Make sure you don't forget the ID.
+
+fetch("http:/localhost:3000/users/", {
+    method: "DELETE",
+    body: JSON.stringify({
+        id: 4
+    })
     headers: {
         "Content-type": "application/json; charset=UTF-8"
     }
