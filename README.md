@@ -71,5 +71,20 @@ fetch("http:/localhost:3000/users/", {
     }
 })
 
+# Changing data
+Use the "fetch" syntax like above but change the method to PATCH. Don't forget to use it in the right order (id, name, age).
+
+fetch("http:/localhost:3000/users/", {
+    method: "PATCH",
+    body: JSON.stringify({
+        id: 6,
+        name: "Turtle Terminator",
+        age: 123
+    })
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+
 # Contributing
 Feel free to submit pull requests or open issues to suggest improvements.
