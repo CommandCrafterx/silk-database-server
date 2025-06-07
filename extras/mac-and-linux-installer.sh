@@ -16,9 +16,9 @@ check_command git
 # Clear screen and print welcome message
 clear
 echo "=========================================="
-echo " Express SQLITE3 Template Installer"
+echo " Welcome to the Silk Server Database Installer"
 echo "=========================================="
-echo "This script will install the Express SQLITE3 Template in your current directory."
+echo "This script will install the Silk Database App in your current directory."
 echo "Ensure that you have npm, Node.js, and Git installed before proceeding."
 echo "Warning: This script will install Node.js modules!"
 echo
@@ -34,8 +34,8 @@ while true; do
 done
 
 # Repository details
-REPO_URL="https://github.com/FlipArtYT/express-sqlite3-template.git"
-TARGET_DIR="express-sqlite3-template"
+REPO_URL="https://github.com/CommandCrafterx/.git"
+TARGET_DIR="silk-database-server"
 
 # Clone the repository
 echo "Cloning the repository..."
@@ -63,5 +63,5 @@ echo "=========================================="
 echo "Installation complete!"
 echo "Navigate to '$TARGET_DIR' and follow the instructions in README.md."
 echo "Credits: FlipArtYT, CommandCrafterx"
-echo "Thank you for using this installer!"
+echo "Thank you for installing Silk Database Server!"
 echo "=========================================="
